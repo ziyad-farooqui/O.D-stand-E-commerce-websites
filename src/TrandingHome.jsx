@@ -8,63 +8,7 @@ const TrandingHome = ({ setSlowFemale }) => {
 
   const [isAtTop, setIsAtTop] = useState(false);
 
-  // 2 second timer ko control karega
-  const timerRef = useRef(false);
-
-
-  useEffect(() => {
-
-    const handleScroll = () => {
-
-      if (!trendingRef.current) return;
-
-      const y =
-        trendingRef.current.getBoundingClientRect().top;
-
-      // console.log("Y:", y);
-
-
-      // Trending top-0 par aa gaya
-      if (y <= 0) {
-
-        setIsAtTop(true);
-
-
-        // Sirf ek baar timer chale
-        if (!timerRef.current) {
-
-          timerRef.current = true;
-
-          // Female section slow
-          setSlowFemale(true);
-
-
-          // 2 seconds baad normal
-          setTimeout(() => {
-
-            setSlowFemale(false);
-
-            timerRef.current = false;
-
-          }, 2000);
-        }
-
-      } else {
-
-        setIsAtTop(false);
-      }
-    };
-
-
-    window.addEventListener("scroll", handleScroll);
-
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-
-  }, [setSlowFemale]);
-
+  
 
   const handleScrollButtonClick = (direction) => {
 
@@ -177,7 +121,7 @@ const TrandingHome = ({ setSlowFemale }) => {
 
       <button
         onClick={() => handleScrollButtonClick('left')}
-        className="nextbuttonleft shadow-lg border-2 border-[#eae8e8] bg-[#c7c7c7] h-9 w-9 md:h-12 md:w-12 flex absolute z-90 bottom-[50%] left-2 md:left-5 rounded-full text-center justify-center items-center text-[30px] rotate-180 cursor-pointer active:scale-95 transition-transform"
+        className="nextbuttonleft shadow-lg border-2  border-white/20 bg-white/10 backdrop-blur-md h-9 w-9 md:h-12 md:w-12 flex absolute z-90 bottom-[50%] left-2 md:left-5 rounded-full text-center justify-center items-center text-[30px] rotate-180 cursor-pointer active:scale-95 transition-transform"
       >
         <GrFormNext />
       </button>
@@ -187,7 +131,7 @@ const TrandingHome = ({ setSlowFemale }) => {
 
       <button
         onClick={() => handleScrollButtonClick('right')}
-        className="nextbuttonright shadow-lg border-2 border-[#eae8e8] bg-[#c7c7c7] h-9 w-9 md:h-12 md:w-12 flex absolute z-90 bottom-[50%] right-2 md:right-5 rounded-full text-center justify-center items-center text-[30px] cursor-pointer active:scale-95 transition-transform"
+        className="nextbuttonright shadow-lg border-2  border-white/20 bg-white/10 backdrop-blur-md h-9 w-9 md:h-12 md:w-12 flex absolute z-90 bottom-[50%] right-2 md:right-5 rounded-full text-center justify-center items-center text-[30px] cursor-pointer active:scale-95 transition-transform"
       >
         <GrFormNext />
       </button>

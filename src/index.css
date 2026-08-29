@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+
+@theme {
+  --breakpoint-mm: 375px;
+}
+
 html {
   overflow-y: overlay;
 }
