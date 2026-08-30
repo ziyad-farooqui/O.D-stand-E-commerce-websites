@@ -7,7 +7,7 @@ import { GrFormNext } from "react-icons/gr";
 
 
 
-const FemaleClothesSection = ({ slowFemale }) => {
+const FemaleClothesSection = () => {
   const FEMALE_CLOTHES_REF = useRef(null);
   const [isAtTop, setIsAtTop] = useState(false);
     const scrollContainerRef = useRef(null);
@@ -165,7 +165,7 @@ const FemaleClothesSection = ({ slowFemale }) => {
 
       {/*the more potion button */}
       <div className='moreoption shadow-lg border-2 gap-1 lg:gap-2 xl:gap-3 border-white/20 lg:h-10 xl:h-12 h-9 md:[30%] mm:w-[40%] w-[50%] lg:mr-10  md:mr-8 mt-5 mr-1 text- justify-center flex items-center rounded-full bg-white/10 backdrop-blur-md cursor-pointer active:scale-95 transition-transform'>
-        <CgDetailsMore className='text-[25px] lg:text-[30px] xl:text-[35px]' />
+        <CgDetailsMore className='text-[25px] lg:text-[30px] xl:text-[35px]  transition-transform' />
       <h1 className='uppercase text-center text-[15px] xl:text-[25px] lg:text-[20px] text-white/90'>more option</h1>
       </div>
 
@@ -191,6 +191,8 @@ const FemaleClothesSection = ({ slowFemale }) => {
 
       </div>
 
+
+     {/*the button for */}
       <button
         onClick={() => handleScrollButtonClick('left')}
         className="nextbuttonleft shadow-lg border-2  border-white/20 bg-white/10 backdrop-blur-md h-9 w-9 md:h-12 md:w-12 flex absolute z-90 bottom-[50%] left-2 md:left-5 rounded-full text-center justify-center items-center text-[30px] rotate-180 cursor-pointer active:scale-95 transition-transform"

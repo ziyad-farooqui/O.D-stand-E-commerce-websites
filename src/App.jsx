@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 import HomeNave from "./Homepage/HomeNave";
 import HomeHeader from "./Homepage/HomeHeader";
-import TrandingHome from "./TrandingHome";
+import TrandingHome from "./Homepage/TrandingHome";
 import FemaleClothesSection from "./Homepage/FemaleClothesSection";
-
+import MaleClothesSection from "./Homepage/MaleClothesSection";
 function App() {
 
   const [slowFemale, setSlowFemale] = useState(false);
@@ -13,10 +13,9 @@ function App() {
     <>
       <HomeNave />
       <HomeHeader />
-
-      <TrandingHome setSlowFemale={setSlowFemale} />
-
-      <FemaleClothesSection slowFemale={slowFemale} />
+      <TrandingHome />
+      <FemaleClothesSection />
+      <MaleClothesSection/>
     </>
   );
 }

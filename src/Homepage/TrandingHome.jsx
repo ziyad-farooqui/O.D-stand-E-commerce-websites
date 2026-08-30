@@ -5,35 +5,60 @@ const TrandingHome = ({ setSlowFemale }) => {
 
   const trendingRef = useRef(null);
   const scrollContainerRef = useRef(null);
-
+  // const scrollContainerRef = useRef(null);
   const [isAtTop, setIsAtTop] = useState(false);
-
   
 
-  const handleScrollButtonClick = (direction) => {
 
-    if (scrollContainerRef.current) {
 
-      const scrollAmount = 340;
 
-      if (direction === 'left') {
+  {/*the function for scrolling button left and right*/}
+     const handleScrollButtonClick = (direction) => {
+ 
+     if (scrollContainerRef.current) {
+ 
+       const scrollAmount = 335;
+ 
+       if (direction === 'left') {
+ 
+         scrollContainerRef.current.scrollLeft -= scrollAmount;
+ 
+       } else {
+ 
+         scrollContainerRef.current.scrollLeft += scrollAmount;
+ 
+       }
+     }
+   };
+ 
+ 
+useEffect(() => {
+  const handleScroll = () => {
+    if (!trendingRef.current) return;
 
-        scrollContainerRef.current.scrollLeft -= scrollAmount;
+    const topPosition =
+      trendingRef.current.getBoundingClientRect().top;
 
-      } else {
-
-        scrollContainerRef.current.scrollLeft += scrollAmount;
-
-      }
+    if (topPosition <= 0) {
+      setIsAtTop(true);
+    } else {
+      setIsAtTop(false);
     }
   };
 
+  window.addEventListener("scroll", handleScroll);
 
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+ 
+   
   function Card() {
 
     return (
 
-      <div className="theitem flex-shrink-0 border border-[#b4c3cb] bg-[#BDC6CE] h-96 w-72 max-w-80 md:max-w-80 rounded-2xl p-1 flex flex-col gap-1 items-center">
+      <div className={`theitem flex-shrink-0 border border-[#b4c3cb] bg-[#BDC6CE] h-96 w-72 max-w-80 md:max-w-80 rounded-2xl p-1 flex flex-col gap-1 items-center  `}>
 
         {/* Upar wala box */}
 
