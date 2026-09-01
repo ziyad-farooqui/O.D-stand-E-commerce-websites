@@ -6,6 +6,7 @@ import TrandingHome from "./Homepage/TrandingHome";
 import FemaleClothesSection from "./Homepage/FemaleClothesSection";
 import MaleClothesSection from "./Homepage/MaleClothesSection";
 import BodyProductsSection from "./Homepage/BodyProductsSection";
+import OfferSection from "./Homepage/OfferSection";
 function App() {
 
   const [slowFemale, setSlowFemale] = useState(false);
@@ -18,6 +19,7 @@ function App() {
       <FemaleClothesSection />
       <MaleClothesSection/>
       <BodyProductsSection/>
+      <OfferSection/>
     </>
   );
 }
