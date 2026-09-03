@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { IoSearchOutline } from "react-icons/io5";
 import { CgDetailsMore } from "react-icons/cg";
 import { GrFormNext } from "react-icons/gr";
+import HomeFooter from './HomeFooter';
 
 const OfferSection = () => {
         const OFFER_SECTION_REF = useRef(null);
@@ -193,7 +194,12 @@ const OfferSection = () => {
                </button>
                
          
+               
+
+
              </div>
+
+             
   )
 }
 
