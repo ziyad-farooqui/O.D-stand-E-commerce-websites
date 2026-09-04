@@ -59,7 +59,7 @@ const OfferSection = () => {
       
           return (
       
-            <div className="theitem flex-shrink-0 border border- bg-[#BDC6CE] h-55 w-72 max-w-80 md:max-w-80 rounded-2xl p-1 flex flex-col gap- items-center mb-70">
+            <div className="theitem flex-shrink-0  bg-[#BDC6CE] h-55 w-72 max-w-80 md:max-w-80 rounded-2xl p-1 flex flex-col gap- items-center mb-70">
       
               {/* Upar wala box */}
       
