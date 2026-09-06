@@ -105,7 +105,7 @@ useEffect(() => {
 
     <div
       ref={trendingRef}
-      className={`TrandingBox overflow-hidden sticky top-0 md:-mt-[120px] lg:-mt-[130px] -mt-[150px] bg-gradient-to-b from-[#b2cad6] via-[#6d8a9c] to-[#2b353c] h-screen w-full flex flex-col relative z-50 transition-all duration-300
+      className={`TrandingBox overflow-hidden sticky top-0 md:-mt-[120px] lg:-mt-[130px] -mt-[120px] bg-gradient-to-b from-[#b2cad6] via-[#6d8a9c] to-[#2b353c] h-screen w-full flex flex-col relative z-50 transition-all duration-300
         ${isAtTop ? "rounded-none" : "rounded-t-[20px]"}`
       }
     >

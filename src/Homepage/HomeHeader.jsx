@@ -58,7 +58,7 @@ const HomeHeader = () => {
     <div className="sticky  border- border-yellow-500 top-20 w-full  h-[calc(100vh-5rem)] flex items-center justify-center relative px-6 z-0 ">
 
       {/* 3D Character */}
-      <div className="absolute w-full border- top-[5%] md:top-[13%] left-1/2 -translate-x-1/2 flex flex-col items-center justify-center pointer-events-none select-none w-full max-w-xs sm:max-w-sm md:max-w-md">
+      <div className="absolute w-full border- top-[15%] md:top-[13%] left-1/2 -translate-x-1/2 flex flex-col items-center justify-center pointer-events-none select-none w-full max-w-xs sm:max-w-sm md:max-w-md">
         <div className=" border- h-full opacity-90 transition-all duration-300 scale-140">
           <img
             src="/bg-for-HeaderHome.png"
