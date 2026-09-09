@@ -104,7 +104,7 @@ const OfferSection = () => {
   return (
      <div
                ref={OFFER_SECTION_REF}
-               className={`FemaleClothes sticky top-0 -mt-[80px] bg-gradient-to-b from-[#532499] to-[#2b353c] h-screen w-full flex flex-col relative z-51 transition-all duration-300
+               className={`FemaleClothes sticky top-0 -mt-[100px] bg-gradient-to-b from-[#532499] to-[#2b353c] h-screen w-full flex flex-col relative z-51 transition-all duration-300
                  ${isAtTop ? "rounded-none" : "rounded-t-[20px]"}
                `}
              >
