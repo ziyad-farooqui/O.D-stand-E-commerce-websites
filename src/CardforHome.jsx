@@ -3,7 +3,7 @@ import React from 'react'
 const Card = () => {
   return (
     <>
-     <div className={`theitem flex-shrink-0 border border-[#b4c3cb] bg-[#BDC6CE] h-96 w-72 max-w-80 md:max-w-80 rounded-2xl p-1 flex flex-col gap-1 items-center mb-25 `}>
+     <div className={`theitem flex-shrink-0 border- border-[#b4c3cb] bg-[#BDC6CE] h-96 w-72 max-w-80 md:max-w-80 rounded-2xl p-1 flex flex-col gap-1 items-center mb-25 `}>
 
         {/* Upar wala box */}
 

@@ -5,11 +5,14 @@ import { LuCopy, LuCopyCheck } from "react-icons/lu";
 import { useState } from "react";
 
 const Other404 = () => {
-  const gotohome = useNavigate();
   const [text, setText] = useState("http://localhost:5173/");
   const [copySuccess, setCopySuccess] = useState(false);
+  const backthepage = useNavigate();
 
-
+  {/*the function for going back to the previous page */}
+  const handleBack = () => {
+    backthepage(-1);
+  };
 
   {/*the function for copying text to clipboard */}
   const handleCopy = async () => {
@@ -61,16 +64,16 @@ const Other404 = () => {
         <img
           src="/Winter road-cuate.png"
           alt="404"
-          className="md:w-100 md:h-100 w-64 h-64"
+          className=" md:w-100 md:h-100 w-64 h-64"
         />
 
       </div>
 
-      <p className="text-[30px] md:text-[50px] text-shadow-lg font-bold">
+      <p className="mask-r-from-80% text-[30px] md:text-[50px] text-shadow-lg font-bold">
         Oops, wrong turn.....
       </p>
 
-      <button onClick={() => gotohome("/")} className="bg-black shadow-lg uppercase h-10 hover:text-gray-100 text-gray-200 rounded-full w-35 hover:bg-gray-900 cursor-pointer active:scale-95 transition-all duration-300 ease-in-out">
+      <button onClick={handleBack} className="bg-black shadow-lg uppercase h-10 hover:text-gray-100 text-gray-200 rounded-full w-35 hover:bg-gray-900 cursor-pointer active:scale-95 transition-all duration-300 ease-in-out">
         back to home
       </button>
 
