@@ -9,6 +9,7 @@ import { useState } from "react";
 const InsidCardHome = () => {
     const [itemsName, setItemsName] = useState("Item Name");
     const [openMore, setOpenMore] = useState(false);
+    const [colorName, setcolorName] = useState('');
 
 
 
@@ -44,7 +45,7 @@ const InsidCardHome = () => {
       {/*the nevbar in item*/}
       <div className=' item-nev  flex items-center justify-center bg-gradient-to-b from-[#68B9DD] from-10% to-[##68B9DD] to-100%  border- border-pink-200 w-full md:h-[7%] h-[5%] '>
 
-      <div className=' border- max-w-300 relative justify-center flex w-full h-full items-center justify-between px-2'>
+      <div className=' md:border-2 border-white/20 shadow-md max-w-300 relative justify-center flex w-full h-full items-center justify-between px-2'>
         <IoIosArrowBack onClick={backfrom} className="border- text-[28px] text-black absolute left-2"/>
 
 
@@ -71,11 +72,27 @@ const InsidCardHome = () => {
       </div>
 
 
-    <div className='thedetails-bar flex justify-center border-2 relative z-10 -top-5 w-full h-25 rounded-t-[20px] bg-gradient-to-b from-[#68B9DD] from-10% to-[##68B9DD] to-100%  h-'>
+    <div className='thedetails-bar flex justify-center border- relative z-10 -top-5 w-full h-auto rounded-t-[20px]
+     bg-gradient-to-b from-[#68B9DD] from-10% via-[#6AB8E0] via-30% via-[#227EB3] via-50% via-[#0E5990] via-70% via-[#532499] via-80% to-[#2b353c] to-%100  '>
 
-     <div className="product-Name flex border-2 border-white/50 max-w-300  md:w-full  w-full mt-10 bg-white/20   rounded-full md:h-10 md:text-[20px]  h-7 uppercase pl-1 flex items-center justify-center overflow-hidden ">{itemsName}</div>
+    <div className='md:border-2 border-white/30 shadow-md  md:max-w-300 w-full '>
 
-     <div className='prodect-color '></div>
+     <div className="product-Name rounded-full mt-10 border-3  border-white/20 flex  w-full h-10 items-center justify-center text-[25px] ">
+     {itemsName}
+     </div>
+
+    {/*the color name  */}
+     <div className='prodect-color mt-2 border- h-50  justify-center items-center md:gap- border-white/50 flex flex-col md:flex-row font-bold text-[20px] '>
+    <h1 className='border-  md:w-40 w-full' > Selected Color:</h1>  
+
+     <div className='color_options border-2  border-white/20 h-50 w-full rounded-lg  md:w-250 ml-'>
+
+     </div>
+
+     </div>
+    
+
+    </div>
     </div>
 
     </div>
