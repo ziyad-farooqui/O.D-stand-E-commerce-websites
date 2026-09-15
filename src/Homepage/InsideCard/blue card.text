@@ -1,0 +1,588 @@
+```jsx
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { IoIosArrowBack } from "react-icons/io";
+import { RiShoppingCartLine, RiHeartLine, RiHeartFill } from "react-icons/ri";
+import {
+  MdOutlineAccountCircle,
+  MdExpandMore,
+  MdOutlineLocalShipping,
+  MdOutlineKeyboardReturn,
+} from "react-icons/md";
+import { FaStar, FaMinus, FaPlus } from "react-icons/fa";
+import { IoBagHandleOutline } from "react-icons/io5";
+
+const InsidCardHome = () => {
+  // Product information
+  const [itemsName] = useState("Item Name");
+  const [colorName, setColorName] = useState("Black");
+
+  // More menu
+  const [openMore, setOpenMore] = useState(false);
+
+  // Product options
+  const [selectedSize, setSelectedSize] = useState("M");
+  const [quantity, setQuantity] = useState(1);
+
+  // Wishlist
+  const [isLiked, setIsLiked] = useState(false);
+
+  // Navigation
+  const navigate = useNavigate();
+
+  const backfrom = () => {
+    navigate(-1);
+  };
+
+  const gotolistpage = () => {
+    navigate("/");
+  };
+
+  const gotoaccountpage = () => {
+    navigate("/account");
+  };
+
+  // More menu
+  const handleMouseEnter = () => {
+    setOpenMore(true);
+  };
+
+  const handleMouseLeave = () => {
+    setOpenMore(false);
+  };
+
+  // Quantity
+  const increaseQuantity = () => {
+    setQuantity((prev) => prev + 1);
+  };
+
+  const decreaseQuantity = () => {
+    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+  };
+
+  // Cart
+  const handleAddToCart = () => {
+    console.log("Added to cart:", {
+      name: itemsName,
+      color: colorName,
+      size: selectedSize,
+      quantity: quantity,
+    });
+  };
+
+  // Buy now
+  const handleBuyNow = () => {
+    console.log("Buy now:", {
+      name: itemsName,
+      color: colorName,
+      size: selectedSize,
+      quantity: quantity,
+    });
+  };
+
+  return (
+    <div className="border border-gray-500 bg-gray-300 min-h-screen w-full flex flex-col">
+
+      {/* ================= NAVBAR ================= */}
+
+      <div className="item-nev flex items-center justify-center bg-gradient-to-b from-[#68B9DD] from-10% to-[#68B9DD] to-100% border border-pink-200 w-full md:h-[7%] h-[5%]">
+
+        <div className="md:border-2 border-white/20 shadow-md md:max-w-[1200px] relative justify-center flex w-full h-full items-center justify-between px-2">
+
+          {/* Back */}
+          <IoIosArrowBack
+            onClick={backfrom}
+            className="border text-[28px] text-black absolute left-2 cursor-pointer"
+          />
+
+          {/* Account */}
+          <MdOutlineAccountCircle
+            onClick={gotoaccountpage}
+            className="md:mr-10 mr-2 border md:text-[45px] text-[30px] text-black absolute right-10 cursor-pointer"
+          />
+
+          {/* More */}
+          <div
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => setOpenMore(!openMore)}
+            className="themore border-2 gap-1 w-25 h-7 rounded-full flex justify-center items-center uppercase cursor-pointer absolute left-1/2 -translate-x-1/2"
+          >
+            more
+
+            {openMore ? (
+              <MdExpandMore className="rotate-180 border text-[25px]" />
+            ) : (
+              <MdExpandMore className="border text-[25px]" />
+            )}
+
+            {/* More Menu */}
+            {openMore && (
+              <div className="absolute top-8 bg-white/90 backdrop-blur-md border border-white/30 shadow-lg rounded-xl w-40 p-2 z-[100]">
+
+                <p className="px-3 py-2 hover:bg-black/10 rounded-lg cursor-pointer">
+                  Product Details
+                </p>
+
+                <p className="px-3 py-2 hover:bg-black/10 rounded-lg cursor-pointer">
+                  Reviews
+                </p>
+
+                <p className="px-3 py-2 hover:bg-black/10 rounded-lg cursor-pointer">
+                  Delivery
+                </p>
+
+                <p className="px-3 py-2 hover:bg-black/10 rounded-lg cursor-pointer">
+                  Return Policy
+                </p>
+
+              </div>
+            )}
+          </div>
+
+          {/* Cart */}
+          <RiShoppingCartLine
+            onClick={gotolistpage}
+            className="border text-black text-[28px] absolute right-2 cursor-pointer"
+          />
+
+        </div>
+      </div>
+
+
+      {/* ================= PRODUCT IMAGE AREA ================= */}
+
+      <div className="item-images-bar border-2 border-black w-full h-[60%] flex justify-center items-center">
+
+        <div className="w-full md:max-w-[1200px] h-full flex flex-col md:flex-row gap-2 p-2">
+
+          {/* Main Image */}
+          <div className="border-2 border-white/40 bg-white/20 rounded-2xl w-full md:w-[70%] h-full flex justify-center items-center">
+
+            <div className="bg-[#7D6AFF] rounded-2xl w-[90%] h-[90%] flex justify-center items-center">
+
+              <h1 className="text-3xl font-bold text-white">
+                Product Image
+              </h1>
+
+            </div>
+
+          </div>
+
+          {/* Small Images */}
+          <div className="border-2 border-white/40 bg-white/20 rounded-2xl w-full md:w-[30%] h-full p-2 flex md:flex-col flex-row gap-2 overflow-auto">
+
+            <div className="bg-[#EEEEEE] rounded-xl min-w-[100px] md:w-full h-24 flex justify-center items-center cursor-pointer">
+              Image 1
+            </div>
+
+            <div className="bg-[#EEEEEE] rounded-xl min-w-[100px] md:w-full h-24 flex justify-center items-center cursor-pointer">
+              Image 2
+            </div>
+
+            <div className="bg-[#EEEEEE] rounded-xl min-w-[100px] md:w-full h-24 flex justify-center items-center cursor-pointer">
+              Image 3
+            </div>
+
+            <div className="bg-[#EEEEEE] rounded-xl min-w-[100px] md:w-full h-24 flex justify-center items-center cursor-pointer">
+              Image 4
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      {/* ================= PRODUCT DETAILS ================= */}
+
+      <div className="thedetails-bar flex justify-center border relative z-10 -top-5 w-full h-auto rounded-t-[20px]
+      bg-gradient-to-b from-[#68B9DD] from-10% via-[#6AB8E0] via-30% via-[#227EB3] via-50% via-[#0E5990] via-70% via-[#532499] via-80% to-[#2b353c] to-100%">
+
+        <div className="md:border-2 border-white/30 shadow-md md:max-w-[1200px] w-full p-2">
+
+
+          {/* PRODUCT NAME */}
+
+          <div className="product-Name rounded-full mt-10 border-2 border-white/20 flex w-full min-h-10 items-center justify-center text-[25px] font-bold">
+
+            {itemsName}
+
+          </div>
+
+
+          {/* ================= PRICE + RATING ================= */}
+
+          <div className="flex flex-col md:flex-row gap-2 mt-2">
+
+            {/* Price */}
+
+            <div className="border-2 border-white/20 rounded-xl bg-white/10 backdrop-blur-md w-full md:w-[50%] p-3">
+
+              <p className="text-white/70 text-sm">
+                Price
+              </p>
+
+              <h1 className="text-3xl font-bold">
+                ₹999
+              </h1>
+
+              <p className="text-green-300">
+                20% OFF
+              </p>
+
+            </div>
+
+
+            {/* Rating */}
+
+            <div className="border-2 border-white/20 rounded-xl bg-white/10 backdrop-blur-md w-full md:w-[50%] p-3">
+
+              <p className="text-white/70 text-sm">
+                Customer Rating
+              </p>
+
+              <div className="flex items-center gap-2">
+
+                <div className="flex text-yellow-300">
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                </div>
+
+                <span>
+                  4.8 (120 reviews)
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* ================= COLOR ================= */}
+
+          <div className="prodect-color mt-2 border border-white/50 min-h-32 p-3 justify-center items-center md:gap-5 border-white/50 flex flex-col md:flex-row font-bold text-[20px]">
+
+            <h1 className="border md:w-40 w-full">
+              Selected Color:
+            </h1>
+
+            <div className="color_options border-2 border-white/20 min-h-24 w-full rounded-lg md:w-[250px] p-3 flex flex-wrap gap-3">
+
+              {/* Black */}
+              <button
+                onClick={() => setColorName("Black")}
+                className={`h-10 w-10 rounded-full bg-black border-2 ${
+                  colorName === "Black"
+                    ? "border-white scale-110"
+                    : "border-gray-400"
+                }`}
+              />
+
+              {/* White */}
+              <button
+                onClick={() => setColorName("White")}
+                className={`h-10 w-10 rounded-full bg-white border-2 ${
+                  colorName === "White"
+                    ? "border-black scale-110"
+                    : "border-gray-400"
+                }`}
+              />
+
+              {/* Blue */}
+              <button
+                onClick={() => setColorName("Blue")}
+                className={`h-10 w-10 rounded-full bg-blue-500 border-2 ${
+                  colorName === "Blue"
+                    ? "border-white scale-110"
+                    : "border-gray-400"
+                }`}
+              />
+
+              <p className="w-full text-sm">
+                {colorName}
+              </p>
+
+            </div>
+
+          </div>
+
+
+          {/* ================= SIZE ================= */}
+
+          <div className="border-2 border-white/20 rounded-xl mt-2 p-3">
+
+            <h2 className="font-bold text-xl">
+              Select Size
+            </h2>
+
+            <div className="flex gap-2 mt-2 flex-wrap">
+
+              {["S", "M", "L", "XL", "XXL"].map((size) => (
+
+                <button
+                  key={size}
+                  onClick={() => setSelectedSize(size)}
+                  className={`border-2 border-white/30 rounded-lg h-10 w-14 ${
+                    selectedSize === size
+                      ? "bg-white text-black"
+                      : "bg-white/10 text-white"
+                  }`}
+                >
+                  {size}
+                </button>
+
+              ))}
+
+            </div>
+
+          </div>
+
+
+          {/* ================= QUANTITY ================= */}
+
+          <div className="border-2 border-white/20 rounded-xl mt-2 p-3 flex items-center justify-between">
+
+            <h2 className="font-bold text-xl">
+              Quantity
+            </h2>
+
+            <div className="flex items-center gap-4 border-2 border-white/30 rounded-full px-3 py-1">
+
+              <button
+                onClick={decreaseQuantity}
+                className="h-8 w-8 flex justify-center items-center rounded-full bg-white/20"
+              >
+                <FaMinus />
+              </button>
+
+              <span className="text-xl">
+                {quantity}
+              </span>
+
+              <button
+                onClick={increaseQuantity}
+                className="h-8 w-8 flex justify-center items-center rounded-full bg-white/20"
+              >
+                <FaPlus />
+              </button>
+
+            </div>
+
+          </div>
+
+
+          {/* ================= ACTION BUTTONS ================= */}
+
+          <div className="flex flex-col md:flex-row gap-2 mt-3">
+
+            {/* Add Cart */}
+
+            <button
+              onClick={handleAddToCart}
+              className="border-2 border-white/20 shadow-lg rounded-full h-12 w-full md:w-[50%] bg-white/10 backdrop-blur-md flex justify-center items-center gap-2 uppercase font-bold active:scale-95 transition-transform"
+            >
+              <RiShoppingCartLine className="text-[25px]" />
+              Add to Cart
+            </button>
+
+
+            {/* Buy Now */}
+
+            <button
+              onClick={handleBuyNow}
+              className="border-2 border-white/20 shadow-lg rounded-full h-12 w-full md:w-[50%] bg-white text-black flex justify-center items-center gap-2 uppercase font-bold active:scale-95 transition-transform"
+            >
+              <IoBagHandleOutline className="text-[25px]" />
+              Buy Now
+            </button>
+
+          </div>
+
+
+          {/* ================= WISHLIST ================= */}
+
+          <button
+            onClick={() => setIsLiked(!isLiked)}
+            className="border-2 border-white/20 rounded-full mt-2 w-full h-11 flex justify-center items-center gap-2 uppercase font-bold bg-white/10"
+          >
+
+            {isLiked ? (
+              <RiHeartFill className="text-red-500 text-[25px]" />
+            ) : (
+              <RiHeartLine className="text-[25px]" />
+            )}
+
+            {isLiked ? "Added to Wishlist" : "Add to Wishlist"}
+
+          </button>
+
+
+          {/* ================= PRODUCT DESCRIPTION ================= */}
+
+          <div className="border-2 border-white/20 rounded-xl mt-3 p-4">
+
+            <h2 className="text-2xl font-bold">
+              Product Description
+            </h2>
+
+            <p className="mt-2 text-white/80 leading-relaxed">
+              This is a high-quality product designed for everyday use.
+              It provides a comfortable experience with a clean and modern
+              design. Product details, material, specifications and other
+              information can be displayed here.
+            </p>
+
+          </div>
+
+
+          {/* ================= DELIVERY ================= */}
+
+          <div className="border-2 border-white/20 rounded-xl mt-3 p-4">
+
+            <h2 className="text-2xl font-bold">
+              Delivery & Return
+            </h2>
+
+            <div className="flex flex-col gap-3 mt-3">
+
+              <div className="flex items-center gap-3">
+                <MdOutlineLocalShipping className="text-[30px]" />
+
+                <div>
+                  <h3 className="font-bold">
+                    Estimated Delivery
+                  </h3>
+
+                  <p className="text-white/70">
+                    Delivery within 3–5 working days
+                  </p>
+                </div>
+              </div>
+
+
+              <div className="flex items-center gap-3">
+                <MdOutlineKeyboardReturn className="text-[30px]" />
+
+                <div>
+                  <h3 className="font-bold">
+                    Return Policy
+                  </h3>
+
+                  <p className="text-white/70">
+                    Easy return available within 7 days
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* ================= PRODUCT INFORMATION ================= */}
+
+          <div className="border-2 border-white/20 rounded-xl mt-3 p-4">
+
+            <h2 className="text-2xl font-bold">
+              Product Information
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-3">
+
+              <p>
+                <b>Brand:</b> O.D. Stand
+              </p>
+
+              <p>
+                <b>Category:</b> Fashion
+              </p>
+
+              <p>
+                <b>Material:</b> Premium Quality
+              </p>
+
+              <p>
+                <b>Color:</b> {colorName}
+              </p>
+
+              <p>
+                <b>Size:</b> {selectedSize}
+              </p>
+
+              <p>
+                <b>Availability:</b> In Stock
+              </p>
+
+            </div>
+
+          </div>
+
+
+          {/* ================= REVIEWS ================= */}
+
+          <div className="border-2 border-white/20 rounded-xl mt-3 p-4 mb-10">
+
+            <h2 className="text-2xl font-bold">
+              Customer Reviews
+            </h2>
+
+            <div className="border border-white/20 rounded-xl mt-3 p-3">
+
+              <div className="flex text-yellow-300">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+              </div>
+
+              <h3 className="font-bold mt-1">
+                Great Product
+              </h3>
+
+              <p className="text-white/70">
+                Really good quality and the product looks exactly
+                as shown.
+              </p>
+
+            </div>
+
+            <div className="border border-white/20 rounded-xl mt-2 p-3">
+
+              <div className="flex text-yellow-300">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+              </div>
+
+              <h3 className="font-bold mt-1">
+                Worth the Price
+              </h3>
+
+              <p className="text-white/70">
+                Good product with fast delivery.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  );
+};
+
+export default InsidCardHome;
+```

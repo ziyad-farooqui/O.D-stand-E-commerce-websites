@@ -59,7 +59,7 @@ const OfferSection = () => {
       
           return (
       
-            <div className="theitem flex-shrink-0  bg-[#BDC6CE] h-55 w-72 max-w-80 md:max-w-80 rounded-2xl p-1 flex flex-col gap- items-center mb-70">
+            <div className="theitem flex-shrink-0  bg-[#BDC6CE] h-55 w-72 rounded-2xl p-1 flex flex-col gap- items-center mb-70">
       
               {/* Upar wala box */}
       
@@ -123,16 +123,20 @@ const OfferSection = () => {
                {/* The Line */}
          
                <div className="TheLoginLineTrandingBox bg-[#FFFFFF] h-2 lg:h-2 md:h-3 mt-2 w-full flex flex-nowrap shadow-[inset_10px_10px_10px_rgba(0,0,0,0.2)]">
+               
                </div>
          
          
                  {/*the box where have boc extra box 1. searchbar 2. the more option*/}
-               <div className='extraBox border- border-white flex gap-1 md:gap-2 lg:gap-5 xl: '>
-         
+               <div className='extraBox   border- border-white flex justify-center   items-center   '>
+                
+                <div className="border- flex relative w-full max-w-300 items-center gap-1 md:gap-2 ">
+
                {/*the serch bar in component */}
-                     <div className="mm:w-[60%] w-[50%] md:w- md:ml-8 lg:ml-10  ml-1 mt-5 border-2 border- xl:h-12 lg:h-10 h-9 bg-white/10 backdrop-blur-md rounded-full pl-1 border border-white/20 flex items-center justify- px- shadow-lg z-10 transition-all focus-within:border-white/40 focus-within:bg-white/15">
+                     <div className="mm:w-[60%]  w-[50%]   border-2 border- xl:h-12 lg:h-10 h-9 bg-white/10 backdrop-blur-md rounded-full pl- border border-white/20 flex items-center justify- px- shadow-lg z-10 transition-all focus-within:border-white/40 focus-within:bg-white/15 mt-1 md:mt-2">
                
                        <div className="flex  border- pr-2 border- items-center justify-center gap- w-full relative rounded-full ">
+
                          <span className="text-white/80  text-[20px] rouded- pr-1 ">
                            <IoSearchOutline className='xl:text-[25px] xl:ml-2' />
                          </span>
@@ -147,17 +151,18 @@ const OfferSection = () => {
                      </div>
          
                {/*the more potion button */}
-               <div className='moreoption shadow-lg border-2 gap-1 lg:gap-2 xl:gap-3 border-white/20 lg:h-10 xl:h-12 h-9 md:[30%] mm:w-[40%] w-[50%] lg:mr-10  md:mr-8 mt-5 mr-1 text- justify-center flex items-center rounded-full bg-white/10 backdrop-blur-md cursor-pointer active:scale-95 transition-transform'>
+               <div className='moreoption shadow-lg border-2 gap-1 lg:gap-2 xl:gap-3 border-white/20 lg:h-10 xl:h-12 h-9 md:[30%] mm:w-[40%] w-[50%] mt-1  md:mt-2  text- justify-center flex items-center rounded-full bg-white/10 backdrop-blur-md cursor-pointer active:scale-95 transition-transform'>
                  <CgDetailsMore className='text-[25px] lg:text-[30px] xl:text-[35px]  transition-transform' />
                <h1 className='uppercase text-center text-[15px] xl:text-[25px] lg:text-[20px] text-white/90'>more option</h1>
                </div>
          
+                </div>
              </div>
                
          
-               {/* Female items */}
+              
          
-               <div         ref={scrollContainerRef} className="bg-transparent h-[100%] w-full max-w-max mx-auto flex items-center gap-6 md:gap-10 overflow-x-auto scroll-smooth px-14 lg:px-20">
+               <div         ref={scrollContainerRef} className="bg-transparent h-[100%] w-full  flex items-center gap-6 md:gap-10 overflow-x-auto scroll-smooth px-14 lg:px-20">
          
                  {/* the card no01 */}
                  <Card/>

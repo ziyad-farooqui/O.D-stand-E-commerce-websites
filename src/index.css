@@ -5,6 +5,10 @@
   --breakpoint-mm: 375px;
 }
 
+@theme {
+  --breakpoint-ms: 320px;
+}
+
 html {
   overflow-y: overlay;
 }

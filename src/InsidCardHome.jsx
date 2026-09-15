@@ -1,38 +1,17 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { IoIosArrowBack } from "react-icons/io";
-import { RiShoppingCartLine } from "react-icons/ri";
-import { MdOutlineAccountCircle , MdExpandMore} from "react-icons/md";
 import { useState } from "react";
+import CardNavbar from './Homepage/InsideCard/CardNavbar';
+import CarditenmImahe from './Homepage/InsideCard/CarditenmImahe';
 
 
 const InsidCardHome = () => {
-    const [itemsName, setItemsName] = useState("Item Name");
-    const [openMore, setOpenMore] = useState(false);
-    const [colorName, setcolorName] = useState('');
+  const [itemsName, setItemsName] = useState("Item Name");
+  const [colorName, setcolorName] = useState('');
 
 
 
-    const handleMouseEnter = () => {openMore(true);}
-    const handleMouseLeave = () => {openMore(false);}
 
-  {/*the back function for going back to the previous page */}
-  const backfromitem = useNavigate();
-  const backfrom = () => {
-    backfromitem(-1);
-  }
-  
-  {/*the function for going to the list page */}
-  const gotolist = useNavigate();
-  const gotolistpage = () => {
-    gotolist("/");
-  }
-
-  {/*the function for going to the account page */}
-  const gotoaccount = useNavigate();
-  const gotoaccountpage = () => {
-    gotoaccount("/");
-  }
 
 
 
@@ -41,59 +20,89 @@ const InsidCardHome = () => {
 
 
 
+      <CardNavbar/>
 
-      {/*the nevbar in item*/}
-      <div className=' item-nev  flex items-center justify-center bg-gradient-to-b from-[#68B9DD] from-10% to-[##68B9DD] to-100%  border- border-pink-200 w-full md:h-[7%] h-[5%] '>
+      {/* <CarditenmImahe /> */}
 
-      <div className=' md:border-2 border-white/20 shadow-md max-w-300 relative justify-center flex w-full h-full items-center justify-between px-2'>
-        <IoIosArrowBack onClick={backfrom} className="border- text-[28px] text-black absolute left-2"/>
-
-
-        <MdOutlineAccountCircle onClick={gotoaccountpage} className="md:mr-10 mr-2 border- md:text-[45px] text-[30px] text-black" />
-
-       <div onMouseEnter={handleMouseEnter} 
-       onMouseLeave={handleMouseLeave} 
-       onClick={() => setOpenMore(!openMore)} className="themore border-2 gap- w-25 h-7 rounded-full flex justify-center uppercase"> 
-                              more 
-        {openMore ? <MdExpandMore className='rotate-180 border-  text-[25px] '/> : <MdExpandMore className=' border-  text-[25px] '/>}
+      {/*the product image bar */}
+      <div className='item-images-bar sticky top-0 border- border-black w-full h-[60%] flex justify-center'>
+        <div className="w-full md:max-w-[1200px] h-full flex flex-col md:flex-row gap-2 p-2">
+          {/* Main Image */}
+          <div className="border-2 border-white/40 bg-white/20 rounded-2xl w-full md:w-[70%] h-full flex justify-center items-center">
+            <div className="bg-[#7D6AFF] rounded-2xl w-[90%] h-[90%] flex justify-center items-center">
+              <h1 className="text-3xl font-bold text-white">
+                Product Image
+              </h1>
+            </div>
+          </div>
+          {/* Small Images */}
+          <div className="border-2 border-white/40 bg-white/20 rounded-2xl w-full md:w-[30%] h-full p-2 flex md:flex-col flex-row gap-2 overflow-auto">
+            <div className="bg-[#EEEEEE] rounded-xl min-w-[100px] md:w-full h-24 flex justify-center items-center cursor-pointer">
+              Image 1
+            </div>
+            <div className="bg-[#EEEEEE] rounded-xl min-w-[100px] md:w-full h-24 flex justify-center items-center cursor-pointer">
+              Image 2
+            </div>
+            <div className="bg-[#EEEEEE] rounded-xl min-w-[100px] md:w-full h-24 flex justify-center items-center cursor-pointer">
+              Image 3
+            </div>
+            <div className="bg-[#EEEEEE] rounded-xl min-w-[100px] md:w-full h-24 flex justify-center items-center cursor-pointer">
+              Image 4
+            </div>
+          </div>
         </div>
 
-        <RiShoppingCartLine onClick={gotolistpage} className="border- text-black text-[28px] absolute right-2 "/> 
       </div>
 
 
-      </div>
-
-
-
-
-      <div className='item-images-bar border-2 border-black w-full h-[60%]'>
-
-      </div>
-
-
-    <div className='thedetails-bar flex justify-center border- relative z-10 -top-5 w-full h-auto rounded-t-[20px]
+      <div className='thedetails-bar flex justify-center border- relative z-10 -top-5 w-full h-auto rounded-t-[20px]
      bg-gradient-to-b from-[#68B9DD] from-10% via-[#6AB8E0] via-30% via-[#227EB3] via-50% via-[#0E5990] via-70% via-[#532499] via-80% to-[#2b353c] to-%100  '>
 
-    <div className='md:border-2 border-white/30 shadow-md  md:max-w-300 w-full '>
+        <div className='md:border- border-white/30 shadow-  md:max-w-300 w-full '>
 
-     <div className="product-Name rounded-full mt-10 border-3  border-white/20 flex  w-full h-10 items-center justify-center text-[25px] ">
-     {itemsName}
-     </div>
+          <div className="product-Name rounded-full mt-10 border-3  border-white/20 flex  w-full h-10 items-center justify-center text-[25px] ">
+            {itemsName}
+          </div>
 
-    {/*the color name  */}
-     <div className='prodect-color mt-2 border- h-50  justify-center items-center md:gap- border-white/50 flex flex-col md:flex-row font-bold text-[20px] '>
-    <h1 className='border-  md:w-40 w-full' > Selected Color:</h1>  
+          {/*the color name  */}
+          <div className='prodect-color mt-2 border- h-50  justify-center items-center md:gap- border-white/50 flex flex-col md:flex-row font-bold text-[20px] '>
+            <h1 className='border-  md:w-40 w-full' > Selected Color:</h1>
 
-     <div className='color_options border-2  border-white/20 h-50 w-full rounded-lg  md:w-250 ml-'>
+            <div className='color_options border-2  border-white/20 h-50 w-full rounded-lg  md:w-250 ml-'>
 
-     </div>
+            </div>
 
-     </div>
-    
+          </div>
 
-    </div>
-    </div>
+
+          <div className="flex flex-col md:flex-row gap-2 mt-2">
+            {/* Price */}
+            <div className="border-2 border-white/20 rounded-xl bg-white/10 backdrop-blur-md w-full md:w-[50%] p-3">
+              <p className="text-white/70 text-sm"> Price </p> <h1 className="text-3xl font-bold">
+                ₹999
+              </h1>
+              <p className="text-green-300">
+                20% OFF
+              </p>
+            </div>
+            {/* Rating */}
+            <div className="border-2 border-white/20 rounded-xl bg-white/10 backdrop-blur-md w-full md:w-[50%] p-3">
+              <p classzName="text-white/70 text-sm">
+                Customer Rating
+              </p> <div className="flex items-center gap-2">
+                <div className="flex text-yellow-300">
+                  {/* <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar /> */}
+                </div>
+                <span>
+                  4.8 (120 reviews)
+                </span>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
 
     </div>
   );
