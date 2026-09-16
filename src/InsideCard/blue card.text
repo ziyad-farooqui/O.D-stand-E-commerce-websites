@@ -117,28 +117,7 @@ const InsidCardHome = () => {
               <MdExpandMore className="border text-[25px]" />
             )}
 
-            {/* More Menu */}
-            {openMore && (
-              <div className="absolute top-8 bg-white/90 backdrop-blur-md border border-white/30 shadow-lg rounded-xl w-40 p-2 z-[100]">
 
-                <p className="px-3 py-2 hover:bg-black/10 rounded-lg cursor-pointer">
-                  Product Details
-                </p>
-
-                <p className="px-3 py-2 hover:bg-black/10 rounded-lg cursor-pointer">
-                  Reviews
-                </p>
-
-                <p className="px-3 py-2 hover:bg-black/10 rounded-lg cursor-pointer">
-                  Delivery
-                </p>
-
-                <p className="px-3 py-2 hover:bg-black/10 rounded-lg cursor-pointer">
-                  Return Policy
-                </p>
-
-              </div>
-            )}
           </div>
 
           {/* Cart */}
