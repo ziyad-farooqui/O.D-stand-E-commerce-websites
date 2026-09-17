@@ -4,6 +4,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { MdOutlineAccountCircle, MdExpandMore } from "react-icons/md";
 import { useState } from "react";
+import { IoMdHome } from "react-icons/io";
 
 const CardNavbar = () => {
     //   const [itemsName, setItemsName] = useState("Item Name");
@@ -44,14 +45,17 @@ const CardNavbar = () => {
            <div className='gap- md:border-2 md:rounded-full border-white/20 shadow-md max-w-300 relative justify- flex w-full h-10 md:h-11 items-center  md:justify-between px-2'>
             {/*the back button icon*/}
              <IoIosArrowBack onClick={backfrom} className="border- text-[28px] text-black absolute left-2 md:left-3" />
-   
-            <div className=' the-logo border- flex md:ml-10 ml-5 mb-1 h-10 w-15' >
+
+            {/* <IoMdHome className='border- md:hidden  ml-10 text-white text-[28px]' /> */}
+
+
+            <div className=' the-logo ms:hidden md:block border- flex md:ml-10 ml-5 mb-1 h-10 w-15' >
               <img  onClick={goHomeLogo } src="public\bg-for-HeaderHome.png" alt="" />
             </div>
 
     
               {/*the d.p showing and linke for go profile page icone*/}
-             <MdOutlineAccountCircle onClick={gotoaccountpage} className=" ms:hidden md:block absolute right-43  border- md:text-[40px] text-[30px] text-black font-light" />
+             {/* <MdOutlineAccountCircle onClick={gotoaccountpage} className=" ms:hidden md:block absolute right-43  border- md:text-[40px] text-[30px] text-black font-light" /> */}
    
              <div onMouseEnter={handleMouseEnter}
                onMouseLeave={handleMouseLeave}
