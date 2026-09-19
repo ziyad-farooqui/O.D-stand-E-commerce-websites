@@ -41,7 +41,7 @@ const CardNavbar = () => {
 
   return (
         
-         <div className=' z-15 item-nev sticky top-0 rounded-  flex items-center justify-center bg-gradient-to-b from-[#68B9DD] from-10% to-[##68B9DD] to-100%  border- border-pink-200 w-full  h-auto '>
+         <div className=' relative z-1 item-nev sticky top-0 rounded-  flex items-center justify-center bg-gradient-to-b from-[#68B9DD] from-10% to-[##68B9DD] to-100%  border- border-pink-200 w-full  h-auto '>
            <div className='gap- md:border-2 md:rounded-full border-white/20 shadow-md max-w-300 relative justify- flex w-full h-10 md:h-11 items-center  md:justify-between px-2'>
             {/*the back button icon*/}
              <IoIosArrowBack onClick={backfrom} className="border- text-[28px] text-black absolute left-2 md:left-3" />
@@ -67,7 +67,7 @@ const CardNavbar = () => {
                            {/* More Menu */}
 
             {openMore && (
-              <div className="absolute top-11 bg-white/50 backdrop-blur-md border border-white/30 shadow-lg rounded-xl w-40 p-2 z-[100]">
+              <div className="absolute top-11 bg-white/50 backdrop-blur-md border border-white/30 shadow-lg rounded-xl w-40 p-2 ">
 
                 <p className="border- px-3 py-2 hover:bg-black/10 rounded-lg cursor-pointer hover:bg-gray-5 hover:scale-105">
                   Details

@@ -11,32 +11,30 @@ const CardTheDetail = () => {
     
     <>
 
-           <div className='thedetails-bar flex justify-center relative z-50 md:top-0 ms:-top- -top- w-full h-auto md:rounded-t-[20px]
+           <div className='thedetails-bar flex justify-center relative z-10 md:top-0 ms:-top- -top- w-full h-auto rounded-t-[20px]
      bg-gradient-to-b from-[#68B9DD] from-10% via-[#6AB8E0] via-30% via-[#227EB3] via-50% via-[#0E5990] via-70% via-[#532499] via-80% to-[#2b353c] to-%100  '>
 
         <div className='md: border-white/30  md:max-w-300 w-full md:px-5 '>
 
-          <div className="product-Name md:rounded-full mt-10 border  border-white/20 flex  w-full h-10 items-center justify-center text-[25px] shadow md:shadow-none md: ">
+          <div className="product-Name md:rounded-full mt-10 border  border-white/20 flex  w-full h-10 items-center justify-center text-[25px]  md:shadow-none md: ">
             {itemsName}
           </div>
 
-        <div className='border flex items-center '>
+        <div className=' flex md:flex-row flex-col items-center md:gap-2 '>
 
 
           {/*the color name  */}
-          <div className='prodect-color mt-2  h-50 w-[70%]  justify-center items-center md:gap- border-white/50 flex flex-col md:flex-row font-bold text-[20px] '>
+          <div className='prodect-color rounded-xl flex md:flex-col mt-2 border  md: w-[95%] md:w-[50%] md:h-auto  justify- items-  border-white/20  font-bold text-[20px] '>
 
-            <div className='color_options border  border-white/20 h-50 w-full rounded-lg   ml-'>
-            <h1 className='border-  md:w-40 w-full' > Selected Color:</h1>
-
-            </div>
+            <h1 className=' flex h-9 w-full pl-1  ' > Selected Color:</h1>
+            <div className='color_options    border-white/20 h-20 w-full'></div>
 
           </div>
 
 
                     {/* ================= QUANTITY ================= */}
 
-          <div className="border x border-white/20 rounded-xl mt-2 p-3 flex flex-col gap-20 items-center justify- w-[30%] h-50">
+          <div className="border  border-white/20 rounded-xl mt-2 p-3 flex flex-col gap-5 items-center justify- w-[95%] md:w-[50%] h-30 ">
 
             <h2 className="font-bold text-xl">
               Quantity
@@ -51,7 +49,7 @@ const CardTheDetail = () => {
                 <FaMinus />
               </button>
 
-              <span className="text-xl">
+              <span className=" text-xl">
                 {/* {quantity} */}
               </span>
 
