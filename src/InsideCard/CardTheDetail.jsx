@@ -85,7 +85,7 @@ const CardTheDetail = () => {
               </p>
             </div>
             {/* Rating */}
-            <div className="ms:hidden md:block  md:flex md:gap-5 w-full border border-white/20 rounded-xl p-2 bg-white/20">
+            <div className="ms:hidden md:block  md:flex  md:gap-5 w-full border border-white/20 rounded-xl p-2 bg-white/20">
 
             <div className="border border-white/20 rounded-xl bg-white/ backdrop-blur-md w-full md:w-[20%]  md:h-30 p-3 active:scale-95 duration-300">
               <p classzName="text-white/70 text-sm  ">
