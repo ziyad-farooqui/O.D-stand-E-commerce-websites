@@ -20,8 +20,13 @@ const ProductPageNav = () => {
         {/*the back button*/}
         <IoIosArrowBack className='border- text-[28px] md:text-[30px] text-black  md:left-3 cursor-pointer   active:scale-95 duration-300  ml-1 md:ml-5 hover:scale-115 ' />
 
+
+        <div className='text-[25px] cursor-pointer flex justify-center text-center sm:hidden md:block border h-10  w-25 rounded-full border-white/20 bg-white/50 shadow-sm hover:scale-105 duration-300 active:scale-95'>
+        $999
+        </div>
+
         {/*he the saechbar */}
-        <div className="w-[70%] md:w-[55%] h-auto   flex  items-center shadow-md rounded-full border border-white/20 bg-white/50 {hover:scale-105} duration-300">
+        <div className="w-[70%] md:w-[55%] h-auto focus-none   flex  items-center shadow-md rounded-full border border-white/20 bg-white/50 {hover:scale-105} duration-300">
           <div className=" w-full flex items-center rounded-full ">
             <IoSearchOutline className=' ml-1 md:ml-2 md:text-[30px] text-[25px]  cursor-pointer active:scale-95 duration-300 hover:scale-115  ' />
             <input

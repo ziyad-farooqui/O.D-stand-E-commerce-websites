@@ -4,6 +4,7 @@ import Home from "./Home";
 import InsidCardHome from "./InsidCardHome";
 import Other404 from "./Other404";
 import ProducPage from "./ProducPage";
+import OderPage from "./OderPage"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/items" element={<InsidCardHome />} />
         <Route path="*"  element={<Other404 />} />
         <Route path="/product" element={<ProducPage/>}  />
+        <Route path="/Oder" element={<OderPage/>}  />
       </Routes>
     </BrowserRouter>
   );
