@@ -2,12 +2,14 @@
 
 
 @theme {
+  --breakpoint-ms: 320px;
+}
+
+
+@theme {
   --breakpoint-mm: 375px;
 }
 
-@theme {
-  --breakpoint-ms: 320px;
-}
 
 @theme {
   --breakpoint-ml: 425px;
