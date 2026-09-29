@@ -5,6 +5,7 @@ import InsidCardHome from "./InsidCardHome";
 import Other404 from "./Other404";
 import ProducPage from "./ProducPage";
 import OderPage from "./OderPage"
+import InsideOderList from "./InsideOderList";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="*"  element={<Other404 />} />
         <Route path="/product" element={<ProducPage/>}  />
         <Route path="/Oder" element={<OderPage/>}  />
+        <Route path="/OderList" element={<InsideOderList/>}  />
+
       </Routes>
     </BrowserRouter>
   );
